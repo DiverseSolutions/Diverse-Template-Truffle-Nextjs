@@ -5,6 +5,18 @@ const path = require("path");
 
 module.exports = {
   contracts_build_directory: path.join(__dirname, "dapp/contracts"),
+  plugins: ['truffle-plugin-verify'],
+
+  api_keys: {
+    etherscan: process.env.ETHEREUM_ETHERSCAN_API_KEY,
+    bscscan: process.env.BSC_ETHERSCAN_API_KEY,
+    polygonscan: process.env.POLYGON_ETHERSCAN_API_KEY,
+    ftmscan: process.env.FANTOM_ETHERSCAN_API_KEY,
+    hecoinfo: 'MY_API_KEY',
+    moonscan: 'MY_API_KEY',
+    bttcscan: 'MY_API_KEY',
+    aurorascan: 'MY_API_KEY'
+  }
 
   networks: {
     ethereum: {
@@ -99,6 +111,8 @@ module.exports = {
   mocha: {
     // timeout: 100000
   },
+
+
 
   // Configure your compilers
   compilers: {
