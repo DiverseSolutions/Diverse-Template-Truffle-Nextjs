@@ -1,3 +1,6 @@
+require('dotenv').config()
+
+const HDWalletProvider = require("@truffle/hdwallet-provider");
 const path = require("path");
 
 /**
@@ -44,6 +47,92 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
+    ethereum: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.ETHEREUM_URL),
+      network_id: 1,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+    bsc: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.BSC_URL),
+      network_id: 56,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+    polygon: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.POLYGON_URL),
+      network_id: 137,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+    avalanche: {
+      chainId: 43114,
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.AVALANCHE_URL),
+      network_id: 43114,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+    fantom: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.FANTOM_URL),
+      network_id: 250,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+
+
+    rinkeby: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.RINKEBY_TESTNET_URL),
+      network_id: 4,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+    bscTestnet: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.BSC_TESTNET_URL),
+      network_id: 97,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+    mumbai: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.MUMBAI_TESTNET_URL),
+      network_id: 80001,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+    fuji: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.FUJI_TESTNET_URL),
+      network_id: 43113,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+
+    fantomTestnet: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.FANTOM_TESTNET_URL),
+      network_id: 4002,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+
+    ganache: {
+      host: "127.0.0.1",
+      port: 7545,
+      network_id: '*',
+    },
+    develop: {
+      host: "127.0.0.1",
+      port: 8545,
+      network_id: '*',
+    }
+
     // development: {
     //  host: "127.0.0.1",     // Localhost (default: none)
     //  port: 8545,            // Standard Ethereum port (default: none)
