@@ -5,7 +5,7 @@ const path = require("path");
 
 module.exports = {
   contracts_build_directory: path.join(__dirname, "dapp/contracts"),
-  plugins: ['truffle-plugin-verify'],
+  plugins: ['truffle-plugin-verify','truffle-flatten'],
 
   api_keys: {
     etherscan: process.env.ETHEREUM_ETHERSCAN_API_KEY,
@@ -16,7 +16,7 @@ module.exports = {
     moonscan: 'MY_API_KEY',
     bttcscan: 'MY_API_KEY',
     aurorascan: 'MY_API_KEY'
-  }
+  },
 
   networks: {
     ethereum: {
