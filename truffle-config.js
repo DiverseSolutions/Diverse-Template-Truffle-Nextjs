@@ -18,6 +18,10 @@ module.exports = {
     aurorascan: 'MY_API_KEY'
   },
 
+  dashboard: {
+    port: 24012,
+  }
+
   networks: {
     ethereum: {
       provider: () => new HDWalletProvider(process.env.MNEMONIC, process.env.ETHEREUM_URL),
@@ -104,6 +108,7 @@ module.exports = {
       port: 8545,
       network_id: '*',
     }
+
 
   },
 
